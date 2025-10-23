@@ -87,7 +87,7 @@ It will **return** the string `failed` for any other age value.
 The following code shows a way to check if the age is an integer:
 
 ```python
-if `age` == int(age):
+if age == int(age):
     print("age is an integer")
 else:
     print("age is not an integer")
