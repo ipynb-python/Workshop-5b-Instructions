@@ -126,6 +126,12 @@ For example look at this example timeseries,
 16, 15, 12, 13, 14, 11
 ```
 
+FIRST VALUE 16
+
+LAST VALUE 11
+
+NET CHANGE -5
+
 Here the net change over the time series is `-5` and can be found using:
 
 $$\texttt{net change} =  \texttt{last value} - \texttt{first value}$$
@@ -135,8 +141,6 @@ Write a function `net_change` that takes a single argument `time_series`.
 It should return the net change over the time series provided. 
 
 You can assume the time series passed is always valid and contains at least two values.
-
-This must be done in function `validate_age` that takes a single argument `age`.
 
 After writing your code add the following code lines to test it. 
 
