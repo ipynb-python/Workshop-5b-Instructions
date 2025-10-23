@@ -1,4 +1,4 @@
-# Python Week 4 Assessed Workshop
+# Python Week 5 Assessed Workshop
 
 Work in CodeSpaces. 
 
@@ -8,152 +8,190 @@ You may use the following cheat sheets if you need to look up any Python command
 
 https://github.com/phil-lewis-exe/PythonCheatSheets
 
-You should not need to use any other websites. 
+**This week you may not use any other websites to help you code.**
+
+**You must ask if you need to use a website to translate the task questions**
+
+**Mobile phones may not be used in class**
 
 ---
 
 ## TASKS
 
 
-### Part 1: While loops 
+### Part 1: Say Hi
 
-*If you are working in CodeSpaces work in file **`4b_part1.py`***
+*If you are working in CodeSpaces work in file **`5b_part1.py`***
 
-The following code uses a `for` loop to generate 15 values in a sequence. 
+Write a Python function called `say_hi` that takes one argument `n`.
 
-Try the code out to see its output.
+The function should display the message `hi` `n`-times each on a single line.
 
-```python
-x = 2
-for i in range(15):
-    print(x)
-    x = x*2
+(i.e. when called with the value 9 it would display hi 9 times).
+
+After writing the function show how to call it, using the example value 4.
+
+The output should be:
+
 ```
-
-Rewrite the code using a while loop to generate the sequence terms, but that will stop looping once `x` is greater or equal to 2000.
-
-(i.e. so the last value printed is the last one in the sequence that is below 2000).
-
-The condition should work to stop the loop whatever value of `x` is set on the first line. 
-
-(If you try different values remember to change it back to `2` before submission).
+hi
+hi
+hi
+hi
+```
 
 ---
 
-### Part 2: If statements  
+### Part 2: Calculating a percentage change
 
-A company are writing software to run a bike hire company.
+*If you are working in CodeSpaces work in file **`5b_part2.py`***
 
-The software stores information on the customer in three variables as shown below:
+A programmer wants to write code to calculate the percentage change between two values `a` and `b`.
+
+This can be found using the following formula:
+
+$$\texttt{percent change} = \frac{b - a}{a} \times 100$$
+
+Write a function `percent_change` that takes two arguments `a` and `b` and returns the percent change.
+
+After writing your code add the following code lines to test it. 
 
 ```python
-fullname = "A N Other"
-age = 23
-height_cm = 155
+check_a = percent_change(50,55)
+check_b = percent_change(50,25)
+
+print(check_a, check_b)
 ```
 
-**2. i** 
-
-*If you are working in CodeSpaces work in file **`4b_part2_i.py`***
-
-To rent a bike customers have to be 18 or over.
-
-Start your file by copying in the code section that sets up the three customer variables.
-
-Write code that displays the message: 
+The output should be 
 
 ```
-checking age
+10.0 -50.0
 ```
-
-Then write an `if` statement that displays a message based on their stored age.
-
-This should display:
-
- - `deny rental` if the customer is under 18
- - `approve rental` if the customer is 18 or over
-
-Test your code with different values, but set the age back to `23` before submission.
 
 ---
 
-**2. ii**
 
-*If you are working in CodeSpaces work in file **`4b_part2_ii.py`***
+### Part 3: Validating an age variable
 
-The bike rental company have three sizes of bike they hire out to customers
+*If you are working in CodeSpaces work in file **`5b_part3.py`***
 
-**`S`** for customers smaller than 140cm
-**`M`** for customers between 140cm and 160cm inclusive
-**`L`** for customers larger than 160cm
+A programmer wants to write code to validate that a provide age is sensible.
 
-Start your file by copying in the code section that sets up the three customer variables.
+This must be done in function `validate_age` that takes a single argument `age`.
 
-Write code that displays the message: 
+This will **return** the string `passed` if the age is an integer, between 0 and 120 inclusive.
+
+It will **return** the string `failed` for any other age value.
+
+The following code shows a way to check if the age is an integer:
+
+```python
+if `age` == int(age):
+    print("age is an integer")
+else:
+    print("age is not an integer")
+```
+
+Write a function `validate_age` that takes an argument `age` to do this.
+
+After writing your code add the following code lines to test it. 
+
+```python
+check_minus = validate(-5)
+check_20 = validate(20)
+check_150 = validate(150)
+check_non_int = validate(7.2)
+
+print(check_minus, check_20, check_150, check_non_int)
+```
+
+The output should be:
 
 ```
-finding size
+failed passed failed failed
 ```
-
-Then write an `if`-`elif`-`else` block that displays the appropriate message from the below according to the stored height.
-
- - **`rent S bike`** 
- - **`rent M bike`**
- - **`rent L bike`**
-
-Test your code with different values, but set the height back to `155` before submission.
 
 ---
 
-### Part 3: Dictionaries
+### Part 4: Finding the net change over a series
 
-**3. i**
+*If you are working in CodeSpaces work in file **`5b_part4.py`***
 
-*If you are working in CodeSpaces work in file **`4b_part3_i.py`***
+A programmer wants to write code to calculate the net change between the start and end of a timeseries.
 
-Start with the following lines of code:
+For example look at this example timeseries,
+
+```
+16, 15, 12, 13, 14, 11
+```
+
+Here the net change over the time series is `-5` and can be found using:
+
+$$\texttt{net change} =  \texttt{last value} - \texttt{first value}$$
+
+Write a function `net_change` that takes a single argument `time_series`.
+
+It should return the net change over the time series provided. 
+
+You can assume the time series passed is always valid and contains at least two values.
+
+This must be done in function `validate_age` that takes a single argument `age`.
+
+After writing your code add the following code lines to test it. 
+
+```python 
+series1 = [ 1, 0, 2, 4 ]
+series2 = [ 10, 0, 2 ]
+
+check_series1 = net_change(series1)
+check_series2 = net_change(series2)
+
+print(check_series1, check_series2)
+```
+
+This should produce the following output:
+
+```
+3 -8
+```
+
+### Part 5: Generating a set of sequences
+
+*If you are working in CodeSpaces work in file **`5b_part5.py`***
+
+A programmer is writing code to explore a mathematical sequence.
+
+In this sequence the next value is found by taking the product of the last two values.
+
+For example for the sequence starting : **2, 3**
+
+The next value is $2 \times 3$, growing the sequence to: **2, 3, 6**
+
+The next value is $3 \times 6$, growing the sequence to: **2, 3, 6, 18**
+
+The next value is $6 \times 18$, growing the sequence to: **2, 3, 6, 18, 108**
+
+Write a function `grow_list` that takes an input argument `mylist` that stores a sequence in a Python list.
+
+The function should calculate the next term in the sequence.
+
+It should return a **new** list that contains the extended sequence.
+
+After writing your code add the following code lines to test it. 
 
 ```python
-customer_data = []
+list1 = [ 2, 3 ]
+list2 = grow_list(list1)
+list3 = grow_list(list2)
+
+print(list1, list2, list3)
 ```
 
-Now add code lines to:
-
- - create an empty Python dictionary called: `customer`
- - store the following customer data into the dictionary:
- 
-   key `fullname`, value `B Wiggins`
-   key `age`, value `45`
-   key `height_cm`, value `190`
-
- - add the dictionary you created into the `customer_data` list
- - print the list to screen
-
----
-
-**3. ii**
-
-*If you are working in CodeSpaces work in file **`4b_part3_ii.py`***
-
-The bike rental company store the level of stock in a python dictionary like the one below:
-
-```python
-stock_levels = { "S": 10, "M": 23, "L": 17 }
-```
-
-a) Starting with this line that defines the dictionary, write Python code that loops over the entries to produce a stock report in the following format:
+This should produce the output:
 
 ```
-number of bikes in stock
-S 10
-M 23
-L 17
-```
-
-b) Edit your code so that it can also add the number of each type of the three bikes and display a final line:
-
-```
-total 50
+[2, 3] [2, 3, 6] [2, 3, 6, 18]
 ```
 
 ---
@@ -164,7 +202,7 @@ Run the following lines in the terminal to stage, commit and push your code back
 
 ```
 git add .
-git commit -m "completed 4b"
+git commit -m "completed 5b"
 git push
 ```
 
