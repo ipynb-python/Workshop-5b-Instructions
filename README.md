@@ -78,7 +78,7 @@ The output should be
 
 A programmer wants to write code to validate that a provide age is sensible.
 
-This must be done in function `validate_age` that takes a single argument `age`.
+This must be done in function `validate` that takes a single argument `age`.
 
 This will **return** the string `passed` if the age is an integer, between 0 and 120 inclusive.
 
@@ -93,7 +93,7 @@ else:
     print("age is not an integer")
 ```
 
-Write a function `validate_age` that takes an argument `age` to do this.
+Write a function `validate` that takes an argument `age` to do this.
 
 After writing your code add the following code lines to test it. 
 
