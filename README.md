@@ -123,16 +123,12 @@ A programmer wants to write code to calculate the net change between the start a
 For example look at this example timeseries,
 
 ```
-16, 15, 12, 13, 14, 11
+[ 16, 15, 12, 13, 14, 11 ]
 ```
 
-FIRST VALUE 16
+Here the first value is 16 the last value is 11 and the net change is -5.
 
-LAST VALUE 11
-
-NET CHANGE -5
-
-Here the net change over the time series is `-5` and can be found using:
+i.e. the net change can be found using:
 
 $$\texttt{net change} =  \texttt{last value} - \texttt{first value}$$
 
@@ -196,6 +192,14 @@ This should produce the output:
 
 ```
 [2, 3] [2, 3, 6] [2, 3, 6, 18]
+```
+
+Hint. to make a copy of a list you can use either code like:
+
+```python
+mylist = [1,2,3]
+mylist_copy1 = mylist.copy()
+mylist_copy2 = mylist[:]
 ```
 
 ---
